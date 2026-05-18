@@ -9,10 +9,28 @@ load(
   "cc_test",
 )
 
+package_group(
+    name = "internal",
+    packages = [
+        "//algebra/...",
+        "//program/...",
+    ],
+)
+
+package_group(
+    name = "clients",
+    packages = [
+      "//algebra/internal",
+    ],
+)
+
 cc_library(
   name = "add",
   srcs = [
     "add.h",
+  ],
+  visibility = [
+    "//algebra:clients",
   ]
 )
 
@@ -33,6 +51,9 @@ cc_library(
   srcs = [
     "div.h",
   ],
+  visibility = [
+    "//algebra:clients",
+  ]
 )
 
 cc_test(
@@ -51,6 +72,9 @@ cc_library(
   name = "literal",
   srcs = [
     "literal.h",
+  ],
+  visibility = [
+    "//algebra:clients",
   ]
 )
 
@@ -70,6 +94,9 @@ cc_library(
   name = "mul",
   srcs = [
     "mul.h",
+  ],
+  visibility = [
+    "//algebra:clients",
   ]
 )
 
@@ -89,6 +116,9 @@ cc_library(
   name = "sub",
   srcs = [
     "sub.h",
+  ],
+  visibility = [
+    "//algebra:clients",
   ]
 )
 
