@@ -46,3 +46,22 @@ cc_test(
     "@googletest//:gtest_main",
   ]
 )
+
+cc_library(
+  name = "mul",
+  srcs = [
+    "mul.h",
+  ]
+)
+
+cc_test(
+  name = "mul_test",
+  srcs = [
+    "mul_test.cc",
+  ],
+  deps = [
+    ":mul",
+    "@googletest//:gtest",
+    "@googletest//:gtest_main",
+  ]
+)
