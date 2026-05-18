@@ -65,3 +65,22 @@ cc_test(
     "@googletest//:gtest_main",
   ]
 )
+
+cc_library(
+  name = "sub",
+  srcs = [
+    "sub.h",
+  ]
+)
+
+cc_test(
+  name = "sub_test",
+  srcs = [
+    "sub_test.cc",
+  ],
+  deps = [
+    ":sub",
+    "@googletest//:gtest",
+    "@googletest//:gtest_main",
+  ]
+)
