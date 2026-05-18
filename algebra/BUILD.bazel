@@ -29,6 +29,25 @@ cc_test(
 )
 
 cc_library(
+  name = "div",
+  srcs = [
+    "div.h",
+  ],
+)
+
+cc_test(
+  name = "div_test",
+  srcs = [
+    "div_test.cc",
+  ],
+  deps = [
+    ":div",
+    "@googletest//:gtest",
+    "@googletest//:gtest_main",
+  ]
+)
+
+cc_library(
   name = "literal",
   srcs = [
     "literal.h",
