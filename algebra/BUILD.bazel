@@ -1,0 +1,29 @@
+
+load(
+  "@rules_cc//cc:cc_library.bzl",
+  "cc_library",
+)
+
+load(
+  "@rules_cc//cc:cc_test.bzl",
+  "cc_test",
+)
+
+cc_library(
+  name = "literal",
+  srcs = [
+    "literal.h",
+  ]
+)
+
+cc_test(
+  name = "literal_test",
+  srcs = [
+    "literal_test.cc",
+  ],
+  deps = [
+    ":literal",
+    "@googletest//:gtest",
+    "@googletest//:gtest_main",
+  ]
+)
