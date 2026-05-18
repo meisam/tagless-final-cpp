@@ -10,6 +10,25 @@ load(
 )
 
 cc_library(
+  name = "add",
+  srcs = [
+    "add.h",
+  ]
+)
+
+cc_test(
+  name = "add_test",
+  srcs = [
+    "add_test.cc",
+  ],
+  deps = [
+    ":add",
+    "@googletest//:gtest",
+    "@googletest//:gtest_main",
+  ]
+)
+
+cc_library(
   name = "literal",
   srcs = [
     "literal.h",
