@@ -6,11 +6,11 @@
 
 namespace program {
 
-  template<typename P, typename A>
-  concept Runnable = requires(P p, A a) {
-    {p.run()} -> std::same_as<std::optional<A>>;
-  };
+template <typename P, typename A>
+concept Runnable = requires(P p, A a) {
+  { p.run() } -> std::same_as<std::optional<A>>;
+};
 
 }
 
-#endif  // CPP_PROGRAM_RUNNABLE_H
+#endif // CPP_PROGRAM_RUNNABLE_H

@@ -1,5 +1,5 @@
-#include <gtest/gtest.h>
 #include "sub.h"
+#include <gtest/gtest.h>
 
 namespace {
 
@@ -21,14 +21,14 @@ struct PointerSub {
   }
 };
 
-}  // namespace
+} // namespace
 
 TEST(SubTest, ValueSemanticsSub_should_be_valid) {
-  static_assert(algebra::Sub<ValueSemanticsSub>
-     && "ValueSemanticsSub should be a valid sub");
+  static_assert(algebra::Sub<ValueSemanticsSub> &&
+                "ValueSemanticsSub should be a valid sub");
 }
 
 TEST(SubTest, PointerSub_should_be_invalid) {
-  static_assert(!algebra::Sub<PointerSub>
-     && "PointerSub should not be a valid sub");
+  static_assert(!algebra::Sub<PointerSub> &&
+                "PointerSub should not be a valid sub");
 }

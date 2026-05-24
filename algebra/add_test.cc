@@ -1,5 +1,5 @@
-#include <gtest/gtest.h>
 #include "add.h"
+#include <gtest/gtest.h>
 
 namespace {
 
@@ -22,14 +22,14 @@ struct PointerAdd {
   }
 };
 
-}  // namespace
+} // namespace
 
 TEST(AddTest, ValueSemanticsAdd_should_be_valid) {
-  static_assert(algebra::Add<ValueSemanticsAdd>
-    && "ValueSemanticsAdd should be a valid add");
+  static_assert(algebra::Add<ValueSemanticsAdd> &&
+                "ValueSemanticsAdd should be a valid add");
 }
 
 TEST(AddTest, PointerAdd_should_be_invalid) {
-  static_assert(!algebra::Add<PointerAdd>
-    && "PointerAdd should not be a valid add");
+  static_assert(!algebra::Add<PointerAdd> &&
+                "PointerAdd should not be a valid add");
 }

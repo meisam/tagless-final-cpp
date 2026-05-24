@@ -6,11 +6,11 @@
 
 namespace algebra {
 
-  template<typename Rep>
-  concept Add = requires(Rep rep, std::optional<int> a, std::optional<int> b) {
-    {rep.add(a, b)} -> std::same_as<std::optional<int>>;
-  };
+template <typename Rep, typename A>
+concept Add = requires(Rep rep, std::optional<A> a, std::optional<A> b) {
+  { rep.add(a, b) } -> std::same_as<std::optional<A>>;
+};
 
 }
 
-#endif  // CPP_ALGEBRA_ADD_H
+#endif // CPP_ALGEBRA_ADD_H

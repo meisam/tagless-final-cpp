@@ -1,5 +1,5 @@
-#include <gtest/gtest.h>
 #include "div.h"
+#include <gtest/gtest.h>
 
 namespace {
 
@@ -27,14 +27,14 @@ struct PointerDiv {
   }
 };
 
-}  // namespace
+} // namespace
 
 TEST(DivTest, ValueSemanticsDiv_should_be_valid) {
-  static_assert(algebra::Div<ValueSemanticsDiv>
-    && "ValueSemanticsDiv should be a valid div");
+  static_assert(algebra::Div<ValueSemanticsDiv> &&
+                "ValueSemanticsDiv should be a valid div");
 }
 
 TEST(DivTest, PointerDiv_should_be_invalid) {
-  static_assert(!algebra::Div<PointerDiv>
-    && "PointerDiv should not be a valid div");
+  static_assert(!algebra::Div<PointerDiv> &&
+                "PointerDiv should not be a valid div");
 }

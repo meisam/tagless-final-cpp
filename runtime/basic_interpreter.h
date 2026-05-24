@@ -13,6 +13,6 @@ struct BasicInterpreter {
   auto div(std::optional<int> a, std::optional<int> b) -> std::optional<int>;
 };
 
-}  // namespace runtime
+} // namespace runtime
 
-#endif  // CPP_RUNTIME_BASIC_INTERPRETER_H
+#endif // CPP_RUNTIME_BASIC_INTERPRETER_H

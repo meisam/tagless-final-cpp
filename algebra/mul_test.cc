@@ -1,5 +1,5 @@
-#include <gtest/gtest.h>
 #include "mul.h"
+#include <gtest/gtest.h>
 
 namespace {
 
@@ -21,14 +21,14 @@ struct PointerMul {
   }
 };
 
-}  // namespace
+} // namespace
 
 TEST(MulTest, ValueSemanticsMul_should_be_valid) {
-  static_assert(algebra::Mul<ValueSemanticsMul>
-     && "ValueSemanticsMul should be a valid mul");
+  static_assert(algebra::Mul<ValueSemanticsMul> &&
+                "ValueSemanticsMul should be a valid mul");
 }
 
 TEST(MulTest, PointerMul_should_be_invalid) {
-  static_assert(!algebra::Mul<PointerMul>
-     && "PointerMul should not be a valid mul");
+  static_assert(!algebra::Mul<PointerMul> &&
+                "PointerMul should not be a valid mul");
 }

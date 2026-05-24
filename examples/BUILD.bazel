@@ -16,6 +16,7 @@ cc_test(
     "//algebra:sub",
     "//algebra:div",
     "//runtime:basic_interpreter",
+    "//runtime:pretty_printer",
     "@googletest//:gtest",
     "@googletest//:gtest_main",
   ],

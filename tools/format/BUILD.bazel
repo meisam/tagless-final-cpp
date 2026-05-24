@@ -1,0 +1,19 @@
+package(default_visibility = ["//visibility:public"])
+
+# Alias referencing the hermetic clang-format tool from our formatter LLVM toolchain
+alias(
+    name = "clang-format",
+    actual = "@llvm_formatter_toolchain//:clang-format",
+)
+
+# Alias referencing the hermetic clang-tidy tool from our formatter LLVM toolchain
+alias(
+    name = "clang-tidy",
+    actual = "@llvm_formatter_toolchain//:clang-tidy",
+)
+
+# Direct alias to clang-format for quick execution
+alias(
+    name = "cpp",
+    actual = ":clang-format",
+)

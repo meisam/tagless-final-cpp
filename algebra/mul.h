@@ -6,11 +6,11 @@
 
 namespace algebra {
 
-  template<typename Rep>
-  concept Mul = requires(Rep rep, std::optional<int> a, std::optional<int> b) {
-    {rep.mul(a, b)} -> std::same_as<std::optional<int>>;
-  };
+template <typename Rep>
+concept Mul = requires(Rep rep, std::optional<int> a, std::optional<int> b) {
+  { rep.mul(a, b) } -> std::same_as<std::optional<int>>;
+};
 
-}  // namespace algebra
+} // namespace algebra
 
-#endif  // CPP_ALGEBRA_MUL_H
+#endif // CPP_ALGEBRA_MUL_H
