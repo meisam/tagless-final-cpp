@@ -24,3 +24,12 @@ cc_library(
     ],
     visibility = ["//runtime:clients"],
 )
+
+cc_library(
+    name = "pretty_printer",
+    srcs = [
+        "pretty_printer.cc",
+        "pretty_printer.h",
+    ],
+    visibility = ["//runtime:clients"],
+)
