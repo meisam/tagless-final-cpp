@@ -6,9 +6,9 @@
 
 namespace algebra {
 
-template <typename Rep>
+template <typename Rep, typename A>
 concept Literal = requires(Rep a, int n) {
-  { a.literal(n) } -> std::same_as<std::optional<int>>;
+  { a.literal(n) } -> std::same_as<std::optional<A>>;
 };
 
 }

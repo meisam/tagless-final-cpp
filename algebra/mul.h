@@ -6,9 +6,9 @@
 
 namespace algebra {
 
-template <typename Rep>
-concept Mul = requires(Rep rep, std::optional<int> a, std::optional<int> b) {
-  { rep.mul(a, b) } -> std::same_as<std::optional<int>>;
+template <typename Rep, typename A>
+concept Mul = requires(Rep rep, std::optional<A> a, std::optional<A> b) {
+  { rep.mul(a, b) } -> std::same_as<std::optional<A>>;
 };
 
 } // namespace algebra

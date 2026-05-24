@@ -25,11 +25,11 @@ struct PointerAdd {
 } // namespace
 
 TEST(AddTest, ValueSemanticsAdd_should_be_valid) {
-  static_assert(algebra::Add<ValueSemanticsAdd> &&
+  static_assert(algebra::Add<ValueSemanticsAdd, int> &&
                 "ValueSemanticsAdd should be a valid add");
 }
 
 TEST(AddTest, PointerAdd_should_be_invalid) {
-  static_assert(!algebra::Add<PointerAdd> &&
+  static_assert(!algebra::Add<PointerAdd, int> &&
                 "PointerAdd should not be a valid add");
 }

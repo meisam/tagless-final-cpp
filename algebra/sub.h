@@ -6,9 +6,9 @@
 
 namespace algebra {
 
-template <typename Rep>
-concept Sub = requires(Rep rep, std::optional<int> a, std::optional<int> b) {
-  { rep.sub(a, b) } -> std::same_as<std::optional<int>>;
+template <typename Rep, typename A>
+concept Sub = requires(Rep rep, std::optional<A> a, std::optional<A> b) {
+  { rep.sub(a, b) } -> std::same_as<std::optional<A>>;
 };
 
 } // namespace algebra

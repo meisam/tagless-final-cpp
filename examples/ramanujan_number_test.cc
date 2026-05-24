@@ -23,7 +23,7 @@ using runtime::BasicInterpreter;
 using runtime::PrettyPrinter;
 
 template <typename P, typename A>
-  requires Add<P> && Literal<P> && Mul<P> && Sub<P> && Div<P>
+  requires Add<P, A> && Literal<P, A> && Mul<P, A> && Sub<P, A> && Div<P, A>
 struct TaxiCabNumberProgram {
   auto run() -> std::optional<A> {
     P p;
@@ -33,7 +33,7 @@ struct TaxiCabNumberProgram {
 };
 
 template <typename P, typename A>
-  requires Add<P> && Literal<P> && Mul<P> && Sub<P> && Div<P>
+  requires Add<P, A> && Literal<P, A> && Mul<P, A> && Sub<P, A> && Div<P, A>
 struct TaxiCabNumberProgram1 {
   auto run() -> std::optional<A> {
     P p;
@@ -44,7 +44,7 @@ struct TaxiCabNumberProgram1 {
 };
 
 template <typename P, typename A>
-  requires Add<P> && Literal<P> && Mul<P> && Sub<P> && Div<P>
+  requires Add<P, A> && Literal<P, A> && Mul<P, A> && Sub<P, A> && Div<P, A>
 struct TaxiCabNumberProgram2 {
   auto run() -> std::optional<A> {
     P p;
@@ -76,6 +76,6 @@ TEST(RamanujanNumberTest, ResultShouldMatch) {
 }
 
 TEST(RamanujanNumberTest, PrettyPrinterTest) {
-  TaxiCabNumberProgram1<PrettyPrinter, std::optional<std::string>> p;
-  EXPECT_EQ(p.run(), "(1 * 1)");
+  TaxiCabNumberProgram1<PrettyPrinter, std::string> p;
+  EXPECT_EQ(p.run(), "(((1 * 1) * 1) + ((12 * 12) * 12))");
 }
