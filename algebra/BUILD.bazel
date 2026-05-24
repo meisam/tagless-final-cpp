@@ -22,6 +22,7 @@ package_group(
     packages = [
       "//algebra/internal",
       "//program:__subpackages__",
+      "//examples:__subpackages__",
     ],
 )
 
