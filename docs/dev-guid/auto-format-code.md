@@ -17,3 +17,15 @@ bazel run //tools/format -- --dry-run --Werror $PWD/main.cc
 # Run clang-tidy directly
 bazel run //tools/format:clang-tidy -- $PWD/main.cc
 ```
+
+## How to format Bazel (Starlark) files:
+
+Use the `tools/format:buildifier` target to format all Starlark files (`BUILD.bazel`, `WORKSPACE`, `MODULE.bazel`, `.bzl`) in the repository:
+
+```bash
+# Format all Bazel files in the repository in-place
+bazel run //tools/format:buildifier
+
+# Run formatting checks (useful for CI)
+bazel test //tools/format:buildifier_test
+```

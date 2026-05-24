@@ -1,28 +1,26 @@
-
 load(
-  "@rules_cc//cc:cc_library.bzl",
-  "cc_library",
+    "@rules_cc//cc:cc_library.bzl",
+    "cc_library",
 )
-
 load(
-  "@rules_cc//cc:cc_test.bzl",
-  "cc_test",
+    "@rules_cc//cc:cc_test.bzl",
+    "cc_test",
 )
 
 package_group(
-  name = "clients",
-  packages = [
-    "//runtime:__subpackages__",
-    "//program:__subpackages__",
-    "//examples:__subpackages__",
-  ],
+    name = "clients",
+    packages = [
+        "//examples:__subpackages__",
+        "//program:__subpackages__",
+        "//runtime:__subpackages__",
+    ],
 )
 
 cc_library(
-  name = "basic_interpreter",
-  srcs = [
-    "basic_interpreter.cc",
-    "basic_interpreter.h",
-  ],
-  visibility = ["//runtime:clients"],
+    name = "basic_interpreter",
+    srcs = [
+        "basic_interpreter.cc",
+        "basic_interpreter.h",
+    ],
+    visibility = ["//runtime:clients"],
 )

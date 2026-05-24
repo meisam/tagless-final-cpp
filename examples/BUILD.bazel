@@ -1,23 +1,23 @@
 load(
-  "@rules_cc//cc:cc_test.bzl",
-  "cc_test",
+    "@rules_cc//cc:cc_test.bzl",
+    "cc_test",
 )
 
 cc_test(
-  name = "ramanujan_number_test",
-  srcs = [
-    "ramanujan_number_test.cc"
-  ],
-  deps = [
-    "//program:runnable",
-    "//algebra:add",
-    "//algebra:literal",
-    "//algebra:mul",
-    "//algebra:sub",
-    "//algebra:div",
-    "//runtime:basic_interpreter",
-    "//runtime:pretty_printer",
-    "@googletest//:gtest",
-    "@googletest//:gtest_main",
-  ],
+    name = "ramanujan_number_test",
+    srcs = [
+        "ramanujan_number_test.cc",
+    ],
+    deps = [
+        "//algebra:add",
+        "//algebra:div",
+        "//algebra:literal",
+        "//algebra:mul",
+        "//algebra:sub",
+        "//program:runnable",
+        "//runtime:basic_interpreter",
+        "//runtime:pretty_printer",
+        "@googletest//:gtest",
+        "@googletest//:gtest_main",
+    ],
 )

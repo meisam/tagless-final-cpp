@@ -1,29 +1,28 @@
 load(
-  "@rules_cc//cc:cc_library.bzl",
-  "cc_library",
+    "@rules_cc//cc:cc_library.bzl",
+    "cc_library",
 )
-
 load(
-  "@rules_cc//cc:cc_test.bzl",
-  "cc_test",
+    "@rules_cc//cc:cc_test.bzl",
+    "cc_test",
 )
 
 cc_library(
-  name = "runnable",
-  srcs = [
-    "runnable.h",
-  ],
-  visibility = ["//visibility:public"],
+    name = "runnable",
+    srcs = [
+        "runnable.h",
+    ],
+    visibility = ["//visibility:public"],
 )
 
 cc_test(
-  name = "runnable_test",
-  srcs = [
-    "runnable_test.cc"
-  ],
-  deps = [
-    ":runnable",
-    "@googletest//:gtest",
-    "@googletest//:gtest_main",
-  ],
+    name = "runnable_test",
+    srcs = [
+        "runnable_test.cc",
+    ],
+    deps = [
+        ":runnable",
+        "@googletest//:gtest",
+        "@googletest//:gtest_main",
+    ],
 )

@@ -1,3 +1,5 @@
+load("@buildifier_prebuilt//:rules.bzl", "buildifier", "buildifier_test")
+
 package(default_visibility = ["//visibility:public"])
 
 # Alias referencing the hermetic clang-format tool from our formatter LLVM toolchain
@@ -16,4 +18,17 @@ alias(
 alias(
     name = "cpp",
     actual = ":clang-format",
+)
+
+buildifier(
+    name = "buildifier",
+    exclude_patterns = ["./.git/*"],
+    mode = "fix",
+)
+
+buildifier_test(
+    name = "buildifier_test",
+    size = "small",
+    exclude_patterns = ["./.git/*"],
+    no_sandbox = True,
 )
