@@ -13,6 +13,7 @@ package_group(
   name = "clients",
   packages = [
     "//runtime:__subpackages__",
+    "//program:__subpackages__",
   ],
 )
 

@@ -21,6 +21,7 @@ package_group(
     name = "clients",
     packages = [
       "//algebra/internal",
+      "//program:__subpackages__",
     ],
 )
 
