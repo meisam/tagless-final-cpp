@@ -31,4 +31,5 @@ buildifier_test(
     size = "small",
     exclude_patterns = ["./.git/*"],
     no_sandbox = True,
+    workspace = "//:MODULE.bazel",
 )

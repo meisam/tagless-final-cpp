@@ -11,6 +11,6 @@ concept Add = requires(Rep rep, std::optional<A> a, std::optional<A> b) {
   { rep.add(a, b) } -> std::same_as<std::optional<A>>;
 };
 
-}
+} // namespace algebra
 
 #endif // CPP_ALGEBRA_ADD_H

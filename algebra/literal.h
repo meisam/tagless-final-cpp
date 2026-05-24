@@ -11,6 +11,6 @@ concept Literal = requires(Rep a, int n) {
   { a.literal(n) } -> std::same_as<std::optional<A>>;
 };
 
-}
+} // namespace algebra
 
 #endif // CPP_ALGEBRA_LITERAL_H
