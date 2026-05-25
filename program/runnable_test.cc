@@ -18,16 +18,16 @@ struct WrongTypeRunnable {
 } // namespace
 
 TEST(RunnableTest, DummyRunnable_should_be_valid) {
-  static_assert(program::Runnable<DummyRunnable, int> &&
+  static_assert(program::Runnable<std::optional, DummyRunnable, int> &&
                 "DummyRunnable should be a valid runnable");
 }
 
 TEST(RunnableTest, NotARunnable_should_be_invalid) {
-  static_assert(!program::Runnable<NotARunnable, int> &&
+  static_assert(!program::Runnable<std::optional, NotARunnable, int> &&
                 "NotARunnable should not be a valid runnable");
 }
 
 TEST(RunnableTest, WrongTypeRunnable_should_be_invalid) {
-  static_assert(!program::Runnable<WrongTypeRunnable, int> &&
+  static_assert(!program::Runnable<std::optional, WrongTypeRunnable, int> &&
                 "WrongTypeRunnable should not be a valid runnable");
 }

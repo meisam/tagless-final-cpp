@@ -6,7 +6,6 @@
 #include "program/runnable.h"
 #include "runtime/basic_interpreter.h"
 
-
 namespace examples {
 
 namespace {
@@ -19,22 +18,24 @@ using algebra::Sub;
 using program::Runnable;
 using runtime::BasicInterpreter;
 
-template <typename P, typename A>
-requires Add<P, A> && Literal<P, A> && Mul<P, A> && Sub<P, A> && Div<P, A>
+template <template <typename> typename F, typename P, typename A>
+  requires Add<F, P, A> && Literal<F, P, A> && Mul<F, P, A> && Sub<F, P, A> &&
+           Div<F, P, A>
 struct TaxiCabNumberProgram2 {
-  auto run() -> std::optional<A> {
+  auto run() -> F<A> {
     P p;
     // 1729 = 1^3 + 12^3 = 9^3 + 10^3
     return p.add(p.mul(p.mul(p.literal(9), p.literal(9)), p.literal(9)),
-    p.mul(p.mul(p.literal(10), p.literal(10)), p.literal(10)));
+                 p.mul(p.mul(p.literal(10), p.literal(10)), p.literal(10)));
   }
 };
 
-}  // namespace
+} // namespace
 
-int program9cubed_plus_10cubed(){
-  return examples::TaxiCabNumberProgram2<BasicInterpreter, int>().run().value();
-
+int program9cubed_plus_10cubed() {
+  return examples::TaxiCabNumberProgram2<std::optional, BasicInterpreter, int>()
+      .run()
+      .value();
 }
 
-}  // namespace examples
+} // namespace examples

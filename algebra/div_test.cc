@@ -30,11 +30,11 @@ struct PointerDiv {
 } // namespace
 
 TEST(DivTest, ValueSemanticsDiv_should_be_valid) {
-  static_assert(algebra::Div<ValueSemanticsDiv> &&
+  static_assert(algebra::Div<std::optional, ValueSemanticsDiv, int> &&
                 "ValueSemanticsDiv should be a valid div");
 }
 
 TEST(DivTest, PointerDiv_should_be_invalid) {
-  static_assert(!algebra::Div<PointerDiv> &&
+  static_assert(!algebra::Div<std::optional, PointerDiv, int> &&
                 "PointerDiv should not be a valid div");
 }

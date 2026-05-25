@@ -22,11 +22,11 @@ struct PointerLiteral {
 } // namespace
 
 TEST(LiteralTest, ValueLiteral_should_be_valid) {
-  static_assert(algebra::Literal<ValueSemanticsLiteral> &&
+  static_assert(algebra::Literal<std::optional, ValueSemanticsLiteral, int> &&
                 "ValueSemanticsLiteral should be a valid literal");
 }
 
 TEST(LiteralTest, PointerLiteral_should_be_invalid) {
-  static_assert(!algebra::Literal<PointerLiteral> &&
+  static_assert(!algebra::Literal<std::optional, PointerLiteral, int> &&
                 "PointerLiteral should not be a valid literal");
 }

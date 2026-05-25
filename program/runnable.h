@@ -6,9 +6,9 @@
 
 namespace program {
 
-template <typename P, typename A>
+template <template <typename> typename F, typename P, typename A>
 concept Runnable = requires(P p, A a) {
-  { p.run() } -> std::same_as<std::optional<A>>;
+  { p.run() } -> std::same_as<F<A>>;
 };
 
 } // namespace program

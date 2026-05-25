@@ -24,11 +24,11 @@ struct PointerMul {
 } // namespace
 
 TEST(MulTest, ValueSemanticsMul_should_be_valid) {
-  static_assert(algebra::Mul<ValueSemanticsMul> &&
+  static_assert(algebra::Mul<std::optional, ValueSemanticsMul, int> &&
                 "ValueSemanticsMul should be a valid mul");
 }
 
 TEST(MulTest, PointerMul_should_be_invalid) {
-  static_assert(!algebra::Mul<PointerMul> &&
+  static_assert(!algebra::Mul<std::optional, PointerMul, int> &&
                 "PointerMul should not be a valid mul");
 }

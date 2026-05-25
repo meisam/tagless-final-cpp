@@ -24,11 +24,11 @@ struct PointerSub {
 } // namespace
 
 TEST(SubTest, ValueSemanticsSub_should_be_valid) {
-  static_assert(algebra::Sub<ValueSemanticsSub> &&
+  static_assert(algebra::Sub<std::optional, ValueSemanticsSub, int> &&
                 "ValueSemanticsSub should be a valid sub");
 }
 
 TEST(SubTest, PointerSub_should_be_invalid) {
-  static_assert(!algebra::Sub<PointerSub> &&
+  static_assert(!algebra::Sub<std::optional, PointerSub, int> &&
                 "PointerSub should not be a valid sub");
 }
