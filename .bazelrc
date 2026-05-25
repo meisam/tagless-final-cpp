@@ -2,6 +2,5 @@ common --tool_java_runtime_version=remotejdk_17
 common --java_runtime_version=remotejdk_17
 common --@protobuf//bazel/toolchains:prefer_prebuilt_protoc
 common --cxxopt=-std=c++26
-comman --sandbox_debug
+common --sandbox_debug
 build --save_temps
-
