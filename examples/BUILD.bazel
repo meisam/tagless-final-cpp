@@ -1,6 +1,27 @@
 load(
+    "@rules_cc//cc:cc_library.bzl",
+    "cc_library",
+)
+
+load(
     "@rules_cc//cc:cc_test.bzl",
     "cc_test",
+)
+
+cc_library(
+    name = "ramanujan_number",
+    srcs = [
+        "ramanujan_number.cc",
+    ],
+    deps = [
+        "//algebra:add",
+        "//algebra:div",
+        "//algebra:literal",
+        "//algebra:mul",
+        "//algebra:sub",
+        "//program:runnable",
+        "//runtime:basic_interpreter",
+    ],
 )
 
 cc_test(

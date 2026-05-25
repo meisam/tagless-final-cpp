@@ -160,7 +160,7 @@ Interpreters provide the actual implementations for the algebra concepts.
 ## Running the Project
 
 Ensure you have [Bazel](https://bazel.build/) installed.
-You can build the codebase and run the tests with:
+You can build the codebase and run the test with:
 
 ```bash
 # Run all unit tests
