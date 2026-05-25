@@ -169,3 +169,7 @@ bazel test //...
 # Run the specific Ramanujan Number examples & interpreters test
 bazel test //examples:ramanujan_number_test
 ```
+
+An example generated assembly is at
+
+* https://godbolt.org/z/hqKnx5Yfs
